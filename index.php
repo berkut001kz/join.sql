@@ -1,10 +1,10 @@
 <?php include 'secret.php'; 
 
 $CONNECT = mysqli_connect('localhost', 'root', $pass, 'film');
-/*if (!$CONNECT) {
+if (!$CONNECT) {
     die('Қосылу мүмкін болмады: ' . mysql_error());
 }
-echo 'Сәтті қосылды';*/
+echo 'Сәтті қосылды';
 
 // $sql = "SELECT m.*, mp.url,mv.url_1080 as url_HD FROM movies m left join  movies_photo mp on mp.movies_id=m.id left join movies_video mv on mv.movies_id=m.id;";
 $sql = "SELECT u.name as user_name, m.name as movies_name, mp.url, mv.url_1080 as url_HD FROM users u left join cart on cart.users_id=u.id left join cart_movies cm on cm.cart_id=cart.id left join movies m on m.id=cm.movies_id left join movies_video mv on mv.movies_id=m.id left join movies_photo mp on mp.movies_id=m.id";
