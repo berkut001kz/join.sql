@@ -162,6 +162,8 @@ SELECT u.name, cart.id as cart_id FROM users u left join cart on cart.users_id=u
 SELECT u.name, cart.id as cart_id, cm.movies_id FROM users u left join cart on cart.users_id=u.id left join cart_movies cm on cm.cart_id=cart.id;
 
 
--- Этот команд
+--****************** Этот команд ***********************************
 
 SELECT u.name as user_name, m.name as movies_name, mp.url, mv.url_1080 as url_HD FROM users u left join cart on cart.users_id=u.id left join cart_movies cm on cm.cart_id=cart.id left join movies m on m.id=cm.movies_id left join movies_video mv on mv.movies_id=m.id left join movies_photo mp on mp.movies_id=m.id;
+		     
+--****************** Этот команд ***********************************
